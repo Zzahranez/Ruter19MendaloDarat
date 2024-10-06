@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: rgba(44, 62, 80, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000; /* Pastikan navbar memiliki prioritas tinggi */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 150px 0;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol Utama */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 1000;
+}
+
+.animated-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Navbar Toggler (Hamburger Menu) */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    z-index: 1100; /* Pastikan tombol hamburger berada di atas */
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before {
+    position: absolute;
+    top: 8px;
+}
+
+.navbar-toggler-icon:after {
+    position: absolute;
+    bottom: 8px;
+}
+
+/* Animasi saat hamburger aktif */
+.navbar-toggler.collapsed .navbar-toggler-icon:before {
+    transform: translateY(12px) rotate(45deg);
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon:after {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Hover untuk tombol hamburger */
+.navbar-toggler:hover {
+    transform: rotate(90deg);
+    color: #f0a500;
+    cursor: pointer;
+}
+
+/* Warna dan efek hover navbar */
+.nav-link {
+    transition: color 0.4s ease, background-color 0.4s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Warna saat dihover */
+.nav-link:hover {
+    color: #f0a500;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Warna untuk link yang aktif */
+.nav-link.active {
+    color: #f0a500;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 5px solid #f0a500;
+}
+
+/* Hover untuk dropdown */
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media Queries untuk Mobile */
+@media (max-width: 768px) {
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+}
